@@ -11,11 +11,13 @@ class Solution {
             }
             else set.add(i*2);
         }
-        
-        while(set.size() >= 1){
+                
+        // 1. get smallest and largest element
+        // 2. calculate deviation
+        // 3. if largest is even, we can make it smaller - DO NOT MAKE ANY LARGER 
+        while(!set.isEmpty()){
             int first = set.first();
             int last = set.last();
-            System.out.println(first + " " + last);
             res = Math.min(res, last-first);
             if(last % 2 == 0){
                 set.remove(last);
